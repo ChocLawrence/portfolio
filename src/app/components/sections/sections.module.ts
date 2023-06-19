@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { LightboxModule } from "ngx-lightbox";
+import { NgImageSliderModule } from "ng-image-slider";
+import { IvyCarouselModule } from "angular-responsive-carousel";
 
-import { LightboxModule } from 'ngx-lightbox';
-import { NgImageSliderModule } from 'ng-image-slider';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { ServicesComponent } from "./services/services.component";
+import { ExperienceComponent } from "./experience/experience.component";
+import { WorksComponent } from "./works/works.component";
+import { BlogComponent } from "./blog/blog.component";
+import { ContactComponent } from "./contact/contact.component";
+import { PricingComponent } from "./pricing/pricing.component";
+import { TestimonialsComponent } from "./testimonials/testimonials.component";
 
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { WorksComponent } from './works/works.component';
-import { BlogComponent } from './blog/blog.component';
-import { ContactComponent } from './contact/contact.component';
-import { PricingComponent } from './pricing/pricing.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-
-import { GalleryComponent } from './gallery/gallery.component';
-import { UiModalComponent } from './ui-modal/ui-modal.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NguCarouselModule } from '@ngu/carousel';
+import { GalleryComponent } from "./gallery/gallery.component";
+import { UiModalComponent } from "./ui-modal/ui-modal.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NguCarouselModule } from "@ngu/carousel";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NguCarouselModule } from '@ngu/carousel';
     PricingComponent,
     TestimonialsComponent,
     GalleryComponent,
-    UiModalComponent
+    UiModalComponent,
+    PageNotFoundComponent,
   ],
   exports: [
     HomeComponent,
@@ -44,8 +46,16 @@ import { NguCarouselModule } from '@ngu/carousel';
     ContactComponent,
     PricingComponent,
     TestimonialsComponent,
-    NgbModule
+    NgbModule,
   ],
-  imports: [CommonModule, LightboxModule, NgImageSliderModule, IvyCarouselModule, NguCarouselModule, NgbModule]
+  imports: [
+    CommonModule,
+    LightboxModule,
+    NgImageSliderModule,
+    IvyCarouselModule,
+    NguCarouselModule,
+    NgbModule,
+    RouterModule
+  ],
 })
 export class SectionsModule {}
