@@ -17,8 +17,7 @@ const routes: Routes = [
         path: 'me',
         loadChildren: () => import('./view/view.module').then((module) => module.ViewModule)
       }
-    ],
-    pathMatch: 'prefix'
+    ]
   },
   { path: "404", component: PageNotFoundComponent },
   { path: "**", redirectTo: "404" },
