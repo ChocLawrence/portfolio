@@ -5,15 +5,15 @@ import { LayoutComponent } from './theme/layout/layout.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/theme/view',
+    redirectTo: '/portfolio/me',
     pathMatch: 'full'
   },
   {
-    path: 'theme',
+    path: 'portfolio',
     component: LayoutComponent,
     children: [
       {
-        path: 'view',
+        path: 'me',
         loadChildren: () => import('./view/view.module').then((module) => module.ViewModule)
       }
     ]

@@ -96,7 +96,7 @@ export class LayoutComponent implements OnInit {
         break;
       default:
         this.themeConfig.theme = 'vertical';
-        this.themeConfig.themeType = 'default';
+        this.themeConfig.themeType = 'light';
         break;
     }
   }
@@ -112,10 +112,10 @@ export class LayoutComponent implements OnInit {
         this.desktopHeaderClass = 'desktop-header-1';
         switch (this.themeConfig.themeType) {
           case 'light':
-            this.desktopLogo = 'assets/images/logo-dark.svg';
+            this.desktopLogo = 'assets/images/logo-dark.png';
             break;
           default:
-            this.desktopLogo = 'assets/images/logo.svg';
+            this.desktopLogo = 'assets/images/logo.png';
         }
         break;
       case 'collapsed':

@@ -6,85 +6,70 @@
 
   <!-- portfolio filter (desktop) -->
   <ul class="portfolio-filter list-inline wow fadeInUp">
-    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'all' }" (click)="workFilter = 'all'">Everything</li>
-    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'creative' }" (click)="workFilter = 'creative'">Creative</li>
-    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'art' }" (click)="workFilter = 'art'">Art</li>
-    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'design' }" (click)="workFilter = 'design'">Design</li>
-    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'branding' }" (click)="workFilter = 'branding'">Branding</li>
+    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'all' }" (click)="workFilter = 'all'">Everything
+    </li>
+    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'creative' }" (click)="workFilter = 'creative'">
+      Full Stack</li>
+    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'art' }" (click)="workFilter = 'art'">Mobile</li>
+    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'design' }" (click)="workFilter = 'design'">UI/UX
+    </li>
+    <li class="list-inline-item" [ngClass]="{ current: workFilter === 'branding' }" (click)="workFilter = 'branding'">
+      Graphic Design</li>
   </ul>
 
   <!-- portfolio filter (mobile) -->
   <div class="pf-filter-wrapper">
     <select class="portfolio-filter-mobile" (change)="onChange($event)">
       <option value="all">Everything</option>
-      <option value="creative">Creative</option>
-      <option value="art">Art</option>
-      <option value="design">Design</option>
-      <option value="branding">Branding</option>
+      <option value="creative">Full Stack</option>
+      <option value="art">Mobile</option>
+      <option value="design">UI/UX</option>
+      <option value="branding">Graphic Design</option>
     </select>
   </div>
 
   <!-- portolio wrapper -->
   <div class="row portfolio-wrapper">
     <!-- portfolio item -->
-    <div class="col-md-4 col-sm-6 grid-item art" *ngIf="workFilter === 'all' || workFilter === 'art'">
-      <a href="javascript:" class="work-image" (click)="singleGallery.open(0)">
-        <div class="portfolio-item rounded shadow-dark">
-          <div class="details">
-            <span class="term">Art</span>
-            <h4 class="title">Project Managment Illustration</h4>
-            <span class="more-button"><i class="icon-magnifier-add"></i></span>
-          </div>
-          <div class="thumb">
-            <app-gallery #singleGallery [albums]="singleGallery1"></app-gallery>
-            <div class="mask"></div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- portfolio item -->
-    <div
-      class="col-md-4 col-sm-6 grid-item creative design"
-      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'"
-    >
+    <div class="col-md-4 col-sm-6 grid-item creative design"
+      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'">
       <a href="javascript:" class="work-content" data-toggle="modal" (click)="exampleModalCenter.show()">
         <div class="portfolio-item rounded shadow-dark">
           <div class="details">
-            <span class="term">Creative</span>
-            <h4 class="title">Guest App Walkthrough Screens</h4>
+            <span class="term">Full Stack</span>
+            <h4 class="title">South West Regional Assembly</h4>
             <span class="more-button"><i class="icon-options"></i></span>
           </div>
           <div class="thumb">
-            <img src="assets/images/works/2.svg" alt="Portfolio-title" />
+            <img src="assets/images/works/1.png" alt="Portfolio-title" />
             <div class="mask"></div>
           </div>
         </div>
       </a>
     </div>
 
-    <app-ui-modal #exampleModalCenter dialogClass="modal-dialog-centered work-modal" [hideHeader]="true" [hideFooter]="true">
+    <app-ui-modal #exampleModalCenter dialogClass="modal-dialog-centered work-modal" [hideHeader]="true"
+      [hideFooter]="true">
       <div class="app-modal-body">
         <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
-          <img src="assets/images/single-work.svg" alt="Title" />
-          <h2>Guest App Walkthrough Screens</h2>
+          <img src="assets/images/works/1.png" alt="Title" />
+          <h2>South West Regional Assembly</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam hendrerit nibh in massa semper rutrum. In rhoncus eleifend mi id
-            tempus.
+            Web portal for the South West Regional Assembly, to share activities as well as manage employees
           </p>
-          <p>Donec consectetur, libero at pretium euismod, nisl felis lobortis urna, id tristique nisl lectus eget ligula.</p>
-          <a href="javascript:" class="btn btn-default">View on Dribbble</a>
+          <p>Governmental Institution, Buea - Cameroon</p>
+          <a href="https://swregionalassembly.cm" class="btn btn-default" target="_blank">View on site</a>
         </div>
       </div>
     </app-ui-modal>
 
     <!-- portfolio item -->
-    <div class="col-md-4 col-sm-6 grid-item branding" *ngIf="workFilter === 'all' || workFilter === 'branding'">
+    <div class="col-md-4 col-sm-6 grid-item branding" *ngIf="workFilter === 'all' || workFilter === 'creative'">
       <a href="javascript:" class="work-video">
         <div class="portfolio-item rounded shadow-dark">
           <div class="details">
-            <span class="term">Branding</span>
-            <h4 class="title">Delivery App Wireframe</h4>
+            <span class="term">Full Stack</span>
+            <h4 class="title">Pether POSH| Dispensations</h4>
             <span class="more-button"><i class="icon-camrecorder"></i></span>
           </div>
           <div class="thumb">
@@ -96,7 +81,7 @@
     </div>
 
     <!-- portfolio item -->
-    <div class="col-md-4 col-sm-6 grid-item creative" *ngIf="workFilter === 'all' || workFilter === 'creative'">
+    <!-- <div class="col-md-4 col-sm-6 grid-item creative" *ngIf="workFilter === 'all' || workFilter === 'creative'">
       <a href="javascript:" class="work-video" (click)="audioModal.show()">
         <div class="portfolio-item rounded shadow-dark">
           <div class="details">
@@ -105,34 +90,95 @@
             <span class="more-button"><i class="icon-music-tone-alt"></i></span>
           </div>
           <div class="thumb">
-            <img src="assets/images/works/4.svg" alt="Portfolio-title" />
+            <img src="assets/images/works/4.png" alt="Portfolio-title" />
             <div class="mask"></div>
           </div>
         </div>
       </a>
     </div>
 
-    <app-ui-modal #audioModal dialogClass="modal-dialog-centered work-modal audio-modal" [hideHeader]="true" [hideFooter]="true">
+    <app-ui-modal #audioModal dialogClass="modal-dialog-centered work-modal audio-modal" [hideHeader]="true"
+      [hideFooter]="true">
       <div class="app-modal-body">
-        <iframe
-          id="music-on"
-          class="mfp-iframe"
-          frameborder="0"
-          allowfullscreen=""
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/385068290&color=%23ff5500&
+        <iframe id="music-on" class="mfp-iframe" frameborder="0" allowfullscreen="" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/385068290&color=%23ff5500&
 auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&
-show_teaser=true&visual=true"
-        ></iframe>
+show_teaser=true&visual=true"></iframe>
+      </div>
+    </app-ui-modal> -->
+
+    <!-- portfolio item -->
+    <div class="col-md-4 col-sm-6 grid-item creative design"
+      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'">
+      <a href="javascript:" class="work-content" data-toggle="modal" (click)="jfsModalCenter.show()">
+        <div class="portfolio-item rounded shadow-dark">
+          <div class="details">
+            <span class="term">Full Stack</span>
+            <h4 class="title">Journal of Food Stability</h4>
+            <span class="more-button"><i class="icon-options"></i></span>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/works/3.png" alt="Portfolio-title" />
+            <div class="mask"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <app-ui-modal #jfsModalCenter dialogClass="modal-dialog-centered work-modal" [hideHeader]="true"
+      [hideFooter]="true">
+      <div class="app-modal-body">
+        <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
+          <img src="assets/images/works/3.png" alt="Title" />
+          <h2>Journal of Food Stability</h2>
+          <p>
+            Web platform for authors to submit papers on food stability
+          </p>
+          <p>Approved papers are posted on the site</p>
+          <a href="https://foodstability.com" class="btn btn-default" target="_blank">View on site</a>
+        </div>
       </div>
     </app-ui-modal>
 
     <!-- portfolio item -->
-    <div class="col-md-4 col-sm-6 grid-item art branding" *ngIf="workFilter === 'all' || workFilter === 'art' || workFilter === 'branding'">
+    <div class="col-md-4 col-sm-6 grid-item creative design"
+      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'">
+      <a href="javascript:" class="work-content" data-toggle="modal" (click)="aswModalCenter.show()">
+        <div class="portfolio-item rounded shadow-dark">
+          <div class="details">
+            <span class="term">Full Stack</span>
+            <h4 class="title">ASwiftConnect</h4>
+            <span class="more-button"><i class="icon-options"></i></span>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/works/13.png" alt="Portfolio-title" />
+            <div class="mask"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <app-ui-modal #aswModalCenter dialogClass="modal-dialog-centered work-modal" [hideHeader]="true"
+      [hideFooter]="true">
+      <div class="app-modal-body">
+        <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
+          <img src="assets/images/works/13.png" alt="Title" />
+          <h2>ASwiftConnect</h2>
+          <p>
+            Platform where designers and creatives can get gigs
+          </p>
+          <p>Open to everyone</p>
+          <a href="https://aswiftconnect.com" class="btn btn-default" target="_blank">View on site</a>
+        </div>
+      </div>
+    </app-ui-modal>
+
+    <!-- portfolio item -->
+    <div class="col-md-4 col-sm-6 grid-item art branding" *ngIf="workFilter === 'all' || workFilter === 'creative'">
       <a href="javascript:" class="gallery-link" (click)="albumsGallery.open(0)">
         <div class="portfolio-item rounded shadow-dark">
           <div class="details">
-            <span class="term">Art, Branding</span>
-            <h4 class="title">iMac Mockup Design</h4>
+            <span class="term">Full Stack</span>
+            <h4 class="title">Applications</h4>
             <span class="more-button"><i class="icon-picture"></i></span>
           </div>
           <div class="thumb">
@@ -144,10 +190,40 @@ show_teaser=true&visual=true"
     </div>
 
     <!-- portfolio item -->
-    <div
-      class="col-md-4 col-sm-6 grid-item creative design"
-      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'"
-    >
+    <div class="col-md-4 col-sm-6 grid-item creative design"
+      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'">
+      <a href="javascript:" class="work-content" data-toggle="modal" (click)="piModalCenter.show()">
+        <div class="portfolio-item rounded shadow-dark">
+          <div class="details">
+            <span class="term">Full Stack</span>
+            <h4 class="title">Insurance Management System</h4>
+            <span class="more-button"><i class="icon-options"></i></span>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/works/6.png" alt="Portfolio-title" />
+            <div class="mask"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <app-ui-modal #piModalCenter dialogClass="modal-dialog-centered work-modal" [hideHeader]="true" [hideFooter]="true">
+      <div class="app-modal-body">
+        <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
+          <img src="assets/images/works/7.png" alt="Title" />
+          <h2>Pether Insure</h2>
+          <p>
+            Insurance management system. Glico Healthcare(a customer in Ghana) used for demonstration purposes.
+          </p>
+          <p>Restricted for Insurance companies registered with Pether</p>
+          <a href="https://insure.pether.io" class="btn btn-default" target="_blank">View on site</a>
+        </div>
+      </div>
+    </app-ui-modal>
+
+    <!-- portfolio item -->
+    <!-- <div class="col-md-4 col-sm-6 grid-item creative design"
+      *ngIf="workFilter === 'all' || workFilter === 'creative' || workFilter === 'design'">
       <a href="javascript:" target="_blank">
         <div class="portfolio-item rounded shadow-dark">
           <div class="details">
@@ -156,7 +232,44 @@ show_teaser=true&visual=true"
             <span class="more-button"><i class="icon-link"></i></span>
           </div>
           <div class="thumb">
-            <img src="assets/images/works/6.svg" alt="Portfolio-title" />
+            <img src="assets/images/works/6.png" alt="Portfolio-title" />
+            <div class="mask"></div>
+          </div>
+        </div>
+      </a>
+    </div> -->
+
+    <!-- portfolio item -->
+    <div class="col-md-4 col-sm-6 grid-item art branding" *ngIf="workFilter === 'all' || workFilter === 'branding'">
+      <a href="javascript:" class="gallery-link" (click)="dalbumsGallery.open(0)">
+        <div class="portfolio-item rounded shadow-dark">
+          <div class="details">
+            <span class="term">Graphic Design</span>
+            <h4 class="title">Designs</h4>
+            <span class="more-button">
+              <a href="https://www.instagram.com/iamchocolateart/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </span>
+          </div>
+          <div class="thumb">
+            <app-gallery #dalbumsGallery [albums]="designAlbums"></app-gallery>
+            <div class="mask"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <!-- portfolio item -->
+    <div class="col-md-4 col-sm-6 grid-item art" *ngIf="workFilter === 'all' || workFilter === 'art'">
+      <a href="javascript:" class="work-image" (click)="singleGallery.open(0)">
+        <div class="portfolio-item rounded shadow-dark">
+          <div class="details">
+            <span class="term">Mobile</span>
+            <h4 class="title">Bohikor Personal Finance Management</h4>
+            <span class="more-button"><i class="icon-magnifier-add"></i></span>
+          </div>
+          <div class="thumb">
+            <app-gallery #singleGallery [albums]="singleGallery1"></app-gallery>
             <div class="mask"></div>
           </div>
         </div>
@@ -164,9 +277,11 @@ show_teaser=true&visual=true"
     </div>
   </div>
 
+
+
   <!-- more button -->
   <div class="load-more text-center mt-4">
-    <a href="javascript:" class="btn btn-default"><i class="fas fa-spinner"></i> Load more</a>
+    <!-- <a href="javascript:" class="btn btn-default"><i class="fas fa-spinner"></i> Load more</a> -->
     <!-- numbered pagination (hidden for infinite scroll) -->
     <ul class="portfolio-pagination list-inline d-none">
       <li class="list-inline-item">1</li>
