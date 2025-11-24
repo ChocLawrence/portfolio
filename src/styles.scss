@@ -4,6 +4,16 @@
 $fa-font-path: '../webfonts';
 
 @import '~bootstrap/scss/bootstrap';
+
+// Override Bootstrap's clearfix to remove IE hack (*zoom: 1) that causes build warnings
+.clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
 @import '~simple-line-icons/scss/simple-line-icons';
 
 @import '~ngx-lightbox/lightbox.css';
